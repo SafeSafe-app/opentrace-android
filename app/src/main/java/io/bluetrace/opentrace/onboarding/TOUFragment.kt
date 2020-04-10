@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import io.bluetrace.opentrace.BuildConfig
 import kotlinx.android.synthetic.main.fragment_tou.*
 import io.bluetrace.opentrace.R
 import io.bluetrace.opentrace.logging.CentralLog
@@ -59,6 +60,7 @@ class TOUFragment : OnboardingFragmentInterface() {
         privacy.setOnClickListener {
             CentralLog.d(TAG, "clicked the privacy safeguards")
             val intent = Intent(mainContext, WebViewActivity::class.java)
+            intent.putExtra("url", BuildConfig.PRIVACY_URL)
             startActivity(intent)
         }
     }

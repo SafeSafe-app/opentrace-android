@@ -1,5 +1,6 @@
 package io.bluetrace.opentrace.onboarding
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.webkit.WebChromeClient
 import android.webkit.WebView
@@ -14,11 +15,18 @@ class WebViewActivity : FragmentActivity() {
 
     private val TAG = "WebViewActivity"
 
+    @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val url = intent.getStringExtra("url") ?: BuildConfig.MAIN_URL
+
         setContentView(R.layout.webview)
-        webview.webViewClient = WebViewClient()
-        webview.loadUrl(BuildConfig.PRIVACY_URL)
+        webview.apply {
+            webViewClient = WebViewClient()
+            loadUrl(url)
+            settings.javaScriptEnabled = true
+            settings.domStorageEnabled = true
+        }
 
         val wbc: WebChromeClient = object : WebChromeClient() {
             override fun onCloseWindow(w: WebView) {

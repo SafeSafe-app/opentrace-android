@@ -49,6 +49,7 @@ android {
 
         buildConfigField "String", "STORE_URL", STORE_URL
         buildConfigField "String", "PRIVACY_URL", PRIVACY_URL
+        buildConfigField "String", "MAIN_URL", MAIN_URL
 
         buildConfigField "String", "FIREBASE_REGION", FIREBASE_REGION
 
