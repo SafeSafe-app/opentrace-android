@@ -31,7 +31,7 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
-        applicationId "io.bluetrace.opentrace"
+        applicationId "io.thecoders.safesafe"
         resValue "string", "build_config_package", "io.bluetrace.opentrace"
         minSdkVersion 22
         targetSdkVersion 29
@@ -87,7 +87,7 @@ android {
             String ssid = STAGING_SERVICE_UUID
             versionNameSuffix "-debug-${getGitHash()}-${ssid.substring(ssid.length() - 5, ssid.length() - 1)}"
             resValue "string", "app_name", "OpenTrace Debug"
-            applicationIdSuffix "stg"
+            //applicationIdSuffix "stg"
         }
 
         release {
@@ -132,7 +132,7 @@ dependencies {
     implementation 'pub.devrel:easypermissions:3.0.0'
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.google.firebase:firebase-config-ktx:19.1.2'
-    implementation 'com.google.firebase:firebase-analytics:17.2.3'
+    implementation 'com.google.firebase:firebase-analytics:17.3.0'
     implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'
     implementation 'com.google.firebase:firebase-storage:19.1.1'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
