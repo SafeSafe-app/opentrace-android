@@ -2,6 +2,7 @@ package io.bluetrace.opentrace
 
 import android.app.ActivityManager
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -13,6 +14,7 @@ import kotlinx.android.synthetic.main.activity_main_new.*
 import io.bluetrace.opentrace.fragment.ForUseByOTCFragment
 import io.bluetrace.opentrace.fragment.HomeFragment
 import io.bluetrace.opentrace.logging.CentralLog
+import io.bluetrace.opentrace.onboarding.WebViewActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -57,6 +59,10 @@ class MainActivity : AppCompatActivity() {
                     }
                     R.id.navigation_help -> {
                         Toast.makeText(this, "To be implemented", Toast.LENGTH_LONG).show()
+                    }
+                    R.id.navigation_safe -> {
+                        val intent = Intent(this, WebViewActivity::class.java)
+                        startActivity(intent)
                     }
                 }
                 false
